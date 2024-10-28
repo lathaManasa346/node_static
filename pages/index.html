@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 1</title>
 </head>
+
 <body>
-    <h2>Select a Book</h2>
-    <ul>
-        <li><a href="http://localhost:3000/select/7845124578985">Believe in Yourself</a></li>
-        <li><a href="http://localhost:3000/select/7845124578451">Pulling Together</a></li>
-        <li><a href="http://localhost:3000/select/9780201633610">Law of Attraction</a></li>
-    </ul>
-    <p>Suryakanth Gunnam</p>
+
+    <!-- form data for user to select book and number of copies on click of purchase button -->
+    <h1> Books by Joseph Murphy</h1>
+    <form id="booksData" method="POST" action="/order">
+        <select id="selectBook" name="product">
+            <option value="0">Select a Book</option>
+            <option value="7845124578985"> Believe in Yourself </option>
+            <option value="7845124578451"> Pulling Together </option>
+            <option value="9854657812456"> Law of Attraction</option>
+        </select>
+        <label for="numberOfCopies">Copies : </label>
+        <input type="text" id="numberOfCopies" name="copies">
+        <br><br>
+        <button type="submit">Purchase</button>
+    </form>
+<br><br>
+    <i>copyright Suryakanth Gunnam</i>
 </body>
+
 </html>
