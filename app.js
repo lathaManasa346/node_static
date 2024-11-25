@@ -65,7 +65,7 @@ app.get('/books', (req, res) => {
     
         // Validate copies
         if (!copies || isNaN(copies) || copies <= 0) {
-            errors.copies = "Enter a valid number of copies.";
+            errors.copies = "Number of copies must be a whole number at least 1.";
         }
     
         // If there are errors, re-render the form with errors and data

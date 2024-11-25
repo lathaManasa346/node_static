@@ -19,54 +19,40 @@
                 <br>
 
     <!-- form data for user to select book and number of copies on click of purchase button -->
-  <form id="booksData" method="POST" action="/order">
-  Errors: {{errors}}
-    <select id="selectBook" name="isbn">
-        <option value="0">Select a Book</option>
-        {{#each products}}
-        <option value="{{this.isbn}}">{{this.title}}</option>
-        {{/each}}
-    </select>
-     {{!-- {{#if errors.isbn}}
-        <p style="color: red;">{{errors.isbn}}</p>
-        {{/if}} --}}
-    <label for="numberOfCopies">Copies:</label>
-    <input type="text" id="numberOfCopies" name="copies">
-        {{!-- {{#if errors.copies}}
-        <p style="color: red;">{{errors.copies}}</p>
-        {{/if}} --}}
-    <br><br>
-    <button type="submit">Place Order</button>
+<form id="booksData" method="POST" action="/order">
+    <div>
+        <label for="selectBook">Select a Book:</label>
+        <select id="selectBook" name="isbn">
+            <option value="0">Select a Book</option>
+            {{#each products}}
+            <option value="{{this.isbn}}">{{this.title}}</option>
+            {{/each}}
+        </select>
+        {{#if errors.isbn}}
+        <p style="font-style: italic;">{{errors.isbn}}</p>
+        {{/if}}
+    </div>
+    <br>
+    <div>
+        <label for="numberOfCopies">Copies:</label>
+        <div style="display: flex; align-items: center;">
+        <input type="text" id="numberOfCopies" name="copies">
+        {{#if errors.copies}}
+        <p style="font-style: italic;margin-left:8px">{{errors.copies}}</p>
+        {{/if}}
+        </div>
+
+    </div>
+    <br>
+    <div>
+        <button type="submit">Place Order</button>
+    </div>
 </form>
+
 
 <br><br>
     <i>copyright Suryakanth Gunnam</i>
 </body>
 
-{{!-- <form id="booksData" method="POST" action="/order">
-        <!-- Book selection dropdown -->
-        <label for="selectBook">Select a Book:</label>
-        <select id="selectBook" name="product">
-            <option value="0">Select a Book</option>
-            {{#each products}}
-            <option value="{{this.isbn}}" {{#if (eq ../formData.product this.isbn)}}selected{{/if}}>{{this.title}}</option>
-            {{/each}}
-        </select>
-        <!-- Error message for book selection -->
-        {{#if errors.product}}
-        <p style="color: red;">{{errors.product}}</p>
-        {{/if}}
-
-        <!-- Number of copies input -->
-        <label for="numberOfCopies">Number of Copies:</label>
-        <input type="text" id="numberOfCopies" name="copies" value="{{formData.copies}}">
-        <!-- Error message for number of copies -->
-        {{#if errors.copies}}
-        <p style="color: red;">{{errors.copies}}</p>
-        {{/if}}
-
-        <br><br>
-        <button type="submit">Purchase</button>
-    </form> --}}
     
 </html>
