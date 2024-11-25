@@ -27,4 +27,4 @@ function getIsbnNum(num){
 
 //export function getIsbnNum
 
-module.exports = { getIsbnNum }
+module.exports = { getIsbnNum, products }

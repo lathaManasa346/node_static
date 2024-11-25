@@ -1,0 +1,46 @@
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+ <style>
+   table, th, td {
+  border: 1px solid black;
+}
+  
+</style>
+</head>
+<body>
+
+    <h1>Books by My Author</h1>
+            
+               <a href="/books">View All Books</a>
+                <a href="/order">Order a Book</a>
+
+                <br><br>
+    <div>
+        <img src="{{bookImage}}" alt="{{bookTitle}}" width="200">
+        <h2>Thank you for your order of {{bookTitle}}!</h2>
+    </div>
+   <table class="tableStyles">
+        <tr>
+            <th>Number of Copies</th>
+            <td>{{copies}}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>${{price}}</td>
+        </tr>
+        <tr>
+            <th>Total (with tax)</th>
+            <td>${{finalTotal}}</td>
+        </tr>
+    </table>
+    <footer>
+        <p><i>Copyright Suryakanth Gunnam</i></p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,29 @@
+<h1>Books by My Author</h1>
+            
+               <a href="/books">View All Books</a>
+                <a href="/order">Order a Book</a>
+                <br>
+                <br>
+
+{{#if products}}
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>${{this.price}}</td>
+          <td><img src="{{this.image}}" alt="{{this.title}}" width="100"></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No products available.</p>
+{{/if}}
